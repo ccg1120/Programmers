@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+#include <string>
 
 using namespace std;
 
@@ -22,124 +22,28 @@ vector<int> solution1217_1(vector<int>, int);
 long long solution1217_2(int , int );
 vector<string> solution1217_3(vector<string> , int );
 
-int solution1217_Company_001(int );
+bool solution1218_1(string );
+string solution1218_2(string s);
+bool solution1218_3(string s);
+string solution1218_4(vector<string> seoul);
 
+int solution1217_Company_001(int );
 int solution1217_Company_004(vector<int> , vector<int> );
+
+
 int main(void)
 {
-	/*int hap = GetSigma(100000);
-	int hap2 = GetSigma(99999);
 
-	cout << hap << endl;
-	vector<string> test1;
-	test1.push_back("mislav");
-	test1.push_back("stanko");
-	test1.push_back("mislav");
-	test1.push_back("ana");
-	
-	
+	//solution1218_1("pPoooyY");
 
-	vector<string> test2;
-	test2.push_back("stanko");
-	test2.push_back("ana");
-	test2.push_back("mislav");
-	
-	
-	
+	//solution1218_2("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
-	
-	string value = solution(test1,test2);*/
+	//solution1218_3("012345");
 
-	//vector<int> temp;
-	//temp.push_back(1);
-	//temp.push_back(3);
-	//temp.push_back(2);
-	//temp.push_back(4);
-	//temp.push_back(2);
-	//temp.push_back(1);
-	//temp.push_back(2);
-	//temp.push_back(3);
-	//temp.push_back(4);
-	//temp.push_back(5);
-
-
-	//solution1211(temp);
-
-
-	//vector<int>temp1212;
-	//temp1212.push_back(1);
-	//temp1212.push_back(5);
-	//temp1212.push_back(2);
-	//temp1212.push_back(6);
-	//temp1212.push_back(3);
-	//temp1212.push_back(7);
-	//temp1212.push_back(4);
-	//vector<vector<int>> temp2_1212;
-	//
-	//vector<int> temptemp;
-	//temptemp.push_back(2);
-	//temptemp.push_back(5);
-	//temptemp.push_back(3);
-	//temp2_1212.push_back(temptemp);
-
-	//vector<int> temptemp2;
-	//temptemp2.push_back(4);
-	//temptemp2.push_back(4);
-	//temptemp2.push_back(1);
-	//temp2_1212.push_back(temptemp2);
-
-	//vector<int> temptemp3;
-	//temptemp3.push_back(1);
-	//temptemp3.push_back(7);
-	//temptemp3.push_back(3);
-	//temp2_1212.push_back(temptemp3);
-
-	////solution1212(temp1212, temp2_1212);
-
-	//vector<int> temp1212_3;
-	//temp1212_3.push_back(1);
-	//temp1212_3.push_back(1);
-	//temp1212_3.push_back(3);
-	//temp1212_3.push_back(3);
-	//temp1212_3.push_back(0);
-	//temp1212_3.push_back(1);
-	//temp1212_3.push_back(1);
-	//solution1212_3(temp1212_3);
-	
-
-
-	//vector<int> temp1217_1;
-	//temp1217_1.push_back(5);
-	//temp1217_1.push_back(9);
-	//temp1217_1.push_back(7);
-	//temp1217_1.push_back(10);
-	//solution1217_1(temp1217_1,5);
-
-	//solution1217_2(-100, 3);
-
-	//vector<string> temp1217_3;
-	//temp1217_3.push_back("sun");
-	//temp1217_3.push_back("bed");
-	//temp1217_3.push_back("car");
-	//
-	//solution1217_3(temp1217_3,1);
-
-
-	//solution1217_Company_001(123);
-
-	vector<int>temp1;
-	temp1.push_back(5);
-	temp1.push_back(1);
-	temp1.push_back(3);
-	temp1.push_back(7);
-
-	vector<int>temp2;
-	temp2.push_back(2);
-	temp2.push_back(2);
-	temp2.push_back(6);
-	temp2.push_back(8);
-
-	solution1217_Company_004(temp1, temp2);
+	vector<string> kk;
+	kk.push_back("Jane");
+	kk.push_back("Kim");
+	solution1218_4(kk);
 
 	return 0;
 }
@@ -630,6 +534,154 @@ bool solution1217_4(string s)
 
     return answer;
 }
+
+//문자열 내 p와 y의 개수
+bool solution1218_1(string s)
+{
+	bool answer = true;
+	size_t slenght = s.length();	
+	
+	int countp = 0;
+	int county = 0;
+
+	cout << 'p' << endl;
+	cout << 'P' << endl;
+	for (size_t i = 0; i < slenght; i++)
+	{
+		if (s.at(i) == 'p' || s.at(i) == 'P')
+		{
+			countp++;
+		}
+		else if (s.at(i) == 'y' || s.at(i) == 'Y')
+		{
+			county++;
+		}
+	}
+	if (countp != county)
+	{
+		answer = false;
+	}
+
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	cout << "Hello Cpp" << endl;
+
+	return answer;
+}
+
+//문자열 내림차순으로 배치하기
+string solution1218_2(string s) {
+	string answer = "";
+
+	vector<char> schar;
+	vector<char> bchar;
+	
+	//65~90 대문자
+
+	for (size_t i = 0; i < s.length(); i++)
+	{
+		if (s[i] <= 90 && s[i] >= 65)
+		{
+			bchar.push_back(s[i]);
+		}
+		else
+		{
+			schar.push_back(s[i]);
+		}
+	}
+
+	if(schar.size()>0)
+	{
+		for (int i = 0; i < schar.size() - 1; i++)
+		{
+			for (int j = i; j < schar.size(); j++)
+			{
+				if (schar[i] < schar[j])
+				{
+					char temp = schar[i];
+					schar[i] = schar[j];
+					schar[j] = temp;
+				}
+			}
+		}
+		for (size_t i = 0; i < schar.size(); i++)
+		{
+			answer += schar[i];
+		}
+	}
+
+	if (bchar.size() > 0)
+	{
+		for (int i = 0; i < bchar.size() - 1; i++)
+		{
+			for (int j = i; j < bchar.size(); j++)
+			{
+				if (bchar[i] < bchar[j])
+				{
+					char temp = bchar[i];
+					bchar[i] = bchar[j];
+					bchar[j] = temp;
+				}
+			}
+		}
+		for (size_t i = 0; i < bchar.size(); i++)
+		{
+			answer += bchar[i];
+		}
+	}
+
+	return answer;
+}
+
+//문자열 다루기 기본
+bool solution1218_3(string s) {
+	bool answer = true;
+	if (s.length() != 4 && s.length() != 6 )
+	{
+		answer = false;
+		return answer;
+	}
+	
+	for (size_t i = 0; i < s.length(); i++)
+	{
+		if (s[i] < '1')
+		{
+			answer = false;
+			break;
+		}
+		else if (s[i] > '9')
+		{
+			answer = false;
+			break;
+		}
+	}
+
+	return answer;
+}
+
+//서울에서 김서방 찾기
+string solution1218_4(vector<string> seoul) {
+	string answer = "김서방은 ";
+	int num = 0;
+	string answer2 = "에 있다.";
+
+	for (size_t i = 0; i < seoul.size(); i++)
+	{
+		if (seoul[i].at(0) == 'K')
+		{
+			if(seoul[i] == "Kim")
+			{
+				num = i;
+				break;
+			}
+		}
+	}
+	
+	answer += to_string(num);
+	answer += answer2;
+
+	return answer;
+}
+
 
 //회사 코딩테스트
 int solution1217_Company_001(int n)
