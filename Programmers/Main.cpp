@@ -25,6 +25,7 @@ vector<string> solution1217_3(vector<string> , int );
 bool solution1218_1(string );
 string solution1218_2(string s);
 bool solution1218_3(string s);
+string solution1218_4(vector<string> seoul);
 
 int solution1217_Company_001(int );
 int solution1217_Company_004(vector<int> , vector<int> );
@@ -37,7 +38,13 @@ int main(void)
 
 	//solution1218_2("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
-	solution1218_3("012345");
+	//solution1218_3("012345");
+
+	vector<string> kk;
+	kk.push_back("Jane");
+	kk.push_back("Kim");
+	solution1218_4(kk);
+
 	return 0;
 }
 
@@ -650,6 +657,31 @@ bool solution1218_3(string s) {
 
 	return answer;
 }
+
+//서울에서 김서방 찾기
+string solution1218_4(vector<string> seoul) {
+	string answer = "김서방은 ";
+	int num = 0;
+	string answer2 = "에 있다.";
+
+	for (size_t i = 0; i < seoul.size(); i++)
+	{
+		if (seoul[i].at(0) == 'K')
+		{
+			if(seoul[i] == "Kim")
+			{
+				num = i;
+				break;
+			}
+		}
+	}
+	
+	answer += to_string(num);
+	answer += answer2;
+
+	return answer;
+}
+
 
 //회사 코딩테스트
 int solution1217_Company_001(int n)
