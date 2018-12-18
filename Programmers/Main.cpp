@@ -61,6 +61,7 @@ long GetDecimal(long input)
 			for (size_t j = i*i; j <= input; j+=i)
 			{
 				vec[j] = false;
+				 
 			}
 		}
 	}
