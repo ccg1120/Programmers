@@ -22,125 +22,17 @@ vector<int> solution1217_1(vector<int>, int);
 long long solution1217_2(int , int );
 vector<string> solution1217_3(vector<string> , int );
 
-int solution1217_Company_001(int );
+bool solution1218_1(string );
 
+int solution1217_Company_001(int );
 int solution1217_Company_004(vector<int> , vector<int> );
+
 int main(void)
 {
-	/*int hap = GetSigma(100000);
-	int hap2 = GetSigma(99999);
-
-	cout << hap << endl;
-	vector<string> test1;
-	test1.push_back("mislav");
-	test1.push_back("stanko");
-	test1.push_back("mislav");
-	test1.push_back("ana");
 	
 	
 
-	vector<string> test2;
-	test2.push_back("stanko");
-	test2.push_back("ana");
-	test2.push_back("mislav");
-	
-	
-	
-
-	
-	string value = solution(test1,test2);*/
-
-	//vector<int> temp;
-	//temp.push_back(1);
-	//temp.push_back(3);
-	//temp.push_back(2);
-	//temp.push_back(4);
-	//temp.push_back(2);
-	//temp.push_back(1);
-	//temp.push_back(2);
-	//temp.push_back(3);
-	//temp.push_back(4);
-	//temp.push_back(5);
-
-
-	//solution1211(temp);
-
-
-	//vector<int>temp1212;
-	//temp1212.push_back(1);
-	//temp1212.push_back(5);
-	//temp1212.push_back(2);
-	//temp1212.push_back(6);
-	//temp1212.push_back(3);
-	//temp1212.push_back(7);
-	//temp1212.push_back(4);
-	//vector<vector<int>> temp2_1212;
-	//
-	//vector<int> temptemp;
-	//temptemp.push_back(2);
-	//temptemp.push_back(5);
-	//temptemp.push_back(3);
-	//temp2_1212.push_back(temptemp);
-
-	//vector<int> temptemp2;
-	//temptemp2.push_back(4);
-	//temptemp2.push_back(4);
-	//temptemp2.push_back(1);
-	//temp2_1212.push_back(temptemp2);
-
-	//vector<int> temptemp3;
-	//temptemp3.push_back(1);
-	//temptemp3.push_back(7);
-	//temptemp3.push_back(3);
-	//temp2_1212.push_back(temptemp3);
-
-	////solution1212(temp1212, temp2_1212);
-
-	//vector<int> temp1212_3;
-	//temp1212_3.push_back(1);
-	//temp1212_3.push_back(1);
-	//temp1212_3.push_back(3);
-	//temp1212_3.push_back(3);
-	//temp1212_3.push_back(0);
-	//temp1212_3.push_back(1);
-	//temp1212_3.push_back(1);
-	//solution1212_3(temp1212_3);
-	
-
-
-	//vector<int> temp1217_1;
-	//temp1217_1.push_back(5);
-	//temp1217_1.push_back(9);
-	//temp1217_1.push_back(7);
-	//temp1217_1.push_back(10);
-	//solution1217_1(temp1217_1,5);
-
-	//solution1217_2(-100, 3);
-
-	//vector<string> temp1217_3;
-	//temp1217_3.push_back("sun");
-	//temp1217_3.push_back("bed");
-	//temp1217_3.push_back("car");
-	//
-	//solution1217_3(temp1217_3,1);
-
-
-	//solution1217_Company_001(123);
-
-	vector<int>temp1;
-	temp1.push_back(5);
-	temp1.push_back(1);
-	temp1.push_back(3);
-	temp1.push_back(7);
-
-	vector<int>temp2;
-	temp2.push_back(2);
-	temp2.push_back(2);
-	temp2.push_back(6);
-	temp2.push_back(8);
-
-	solution1217_Company_004(temp1, temp2);
-
+	solution1218_1("pPoooyY");
 	return 0;
 }
 
@@ -630,6 +522,41 @@ bool solution1217_4(string s)
 
     return answer;
 }
+
+//문자열 내 p와 y의 개수
+bool solution1218_1(string s)
+{
+	bool answer = true;
+	size_t slenght = s.length();	
+	
+	int countp = 0;
+	int county = 0;
+
+	cout << 'p' << endl;
+	cout << 'P' << endl;
+	for (size_t i = 0; i < slenght; i++)
+	{
+		if (s.at(i) == 'p' || s.at(i) == 'P')
+		{
+			countp++;
+		}
+		else if (s.at(i) == 'y' || s.at(i) == 'Y')
+		{
+			county++;
+		}
+	}
+	if (countp != county)
+	{
+		answer = false;
+	}
+
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	cout << "Hello Cpp" << endl;
+
+	return answer;
+}
+
+
 
 //회사 코딩테스트
 int solution1217_Company_001(int n)
