@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-
+#include <string>
 
 using namespace std;
 
@@ -23,16 +23,18 @@ long long solution1217_2(int , int );
 vector<string> solution1217_3(vector<string> , int );
 
 bool solution1218_1(string );
+string solution1218_2(string s);
 
 int solution1217_Company_001(int );
 int solution1217_Company_004(vector<int> , vector<int> );
 
+
 int main(void)
 {
-	
-	
 
-	solution1218_1("pPoooyY");
+	//solution1218_1("pPoooyY");
+
+	solution1218_2("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 	return 0;
 }
 
@@ -556,7 +558,68 @@ bool solution1218_1(string s)
 	return answer;
 }
 
+string solution1218_2(string s) {
+	string answer = "";
 
+	vector<char> schar;
+	vector<char> bchar;
+	
+	//65~90 대문자
+
+	for (size_t i = 0; i < s.length(); i++)
+	{
+		if (s[i] <= 90 && s[i] >= 65)
+		{
+			bchar.push_back(s[i]);
+		}
+		else
+		{
+			schar.push_back(s[i]);
+		}
+	}
+
+	if(schar.size()>0)
+	{
+		for (int i = 0; i < schar.size() - 1; i++)
+		{
+			for (int j = i; j < schar.size(); j++)
+			{
+				if (schar[i] < schar[j])
+				{
+					char temp = schar[i];
+					schar[i] = schar[j];
+					schar[j] = temp;
+				}
+			}
+		}
+		for (size_t i = 0; i < schar.size(); i++)
+		{
+			answer += schar[i];
+		}
+	}
+
+	if (bchar.size() > 0)
+	{
+		for (int i = 0; i < bchar.size() - 1; i++)
+		{
+			for (int j = i; j < bchar.size(); j++)
+			{
+				if (bchar[i] < bchar[j])
+				{
+					char temp = bchar[i];
+					bchar[i] = bchar[j];
+					bchar[j] = temp;
+				}
+			}
+		}
+		for (size_t i = 0; i < bchar.size(); i++)
+		{
+			answer += bchar[i];
+		}
+	}
+
+	return answer;
+}
 
 //회사 코딩테스트
 int solution1217_Company_001(int n)
