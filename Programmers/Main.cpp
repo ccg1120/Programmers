@@ -24,6 +24,7 @@ vector<string> solution1217_3(vector<string> , int );
 
 bool solution1218_1(string );
 string solution1218_2(string s);
+bool solution1218_3(string s);
 
 int solution1217_Company_001(int );
 int solution1217_Company_004(vector<int> , vector<int> );
@@ -34,7 +35,9 @@ int main(void)
 
 	//solution1218_1("pPoooyY");
 
-	solution1218_2("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+	//solution1218_2("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
+	solution1218_3("012345");
 	return 0;
 }
 
@@ -558,6 +561,7 @@ bool solution1218_1(string s)
 	return answer;
 }
 
+//문자열 내림차순으로 배치하기
 string solution1218_2(string s) {
 	string answer = "";
 
@@ -615,6 +619,32 @@ string solution1218_2(string s) {
 		for (size_t i = 0; i < bchar.size(); i++)
 		{
 			answer += bchar[i];
+		}
+	}
+
+	return answer;
+}
+
+//문자열 다루기 기본
+bool solution1218_3(string s) {
+	bool answer = true;
+	if (s.length() != 4 && s.length() != 6 )
+	{
+		answer = false;
+		return answer;
+	}
+	
+	for (size_t i = 0; i < s.length(); i++)
+	{
+		if (s[i] < '1')
+		{
+			answer = false;
+			break;
+		}
+		else if (s[i] > '9')
+		{
+			answer = false;
+			break;
 		}
 	}
 
