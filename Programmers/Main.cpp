@@ -683,6 +683,28 @@ string solution1218_4(vector<string> seoul) {
 	return answer;
 }
 
+//수박수박수박수박수박수?
+string solution1219_1(int n) {
+	string answer = "";
+	string b = "수";
+	string a = "박";
+	for (int i = 1; i <= n; i++)
+	{
+
+		if ((i % 2)== 0)
+		{
+			answer += a;
+		}
+		else
+		{
+			answer += b;
+
+		}
+	}
+
+	return answer;
+}
+
 
 //회사 코딩테스트
 int solution1217_Company_001(int n)
