@@ -683,6 +683,58 @@ string solution1218_4(vector<string> seoul) {
 	return answer;
 }
 
+//수박수박수박수박수박수?
+string solution1219_1(int n) {
+	string answer = "";
+	string b = "수";
+	string a = "박";
+	for (int i = 1; i <= n; i++)
+	{
+
+		if ((i % 2)== 0)
+		{
+			answer += a;
+		}
+		else
+		{
+			answer += b;
+
+		}
+	}
+
+	return answer;
+}
+
+//문자열을 정수로 바꾸기
+int solution1219_2(string s) {
+	int answer = 0;
+	bool signal = true;
+	//1의 자리
+	int length = s.length();
+	int add = 0;
+	if (s.at[0] == '-')
+	{
+		signal = false;
+		add++;
+	}
+	else if (s.at[0] == '+')
+	{
+		add++;
+	}
+	int maxvalue = 10 * length;
+	for (size_t i = 0 + add; i < length; i++)
+	{
+		int num = s[i] - '0';
+		//answer += (num*)
+	}
+
+	//to int는 식상하니까 다르게 
+
+
+
+	return answer;
+}
+
 
 //회사 코딩테스트
 int solution1217_Company_001(int n)
