@@ -30,7 +30,7 @@ string solution1218_4(vector<string> seoul);
 int solution1217_Company_001(int );
 int solution1217_Company_004(vector<int> , vector<int> );
 
-
+string solution_1227_1(string s, int n);
 int main(void)
 {
 
@@ -40,32 +40,36 @@ int main(void)
 
 	//solution1218_3("012345");
 
-	vector<string> kk;
+	/*vector<string> kk;
 	kk.push_back("Jane");
 	kk.push_back("Kim");
-	solution1218_4(kk);
+	solution1218_4(kk);*/
+
+	
+	solution_1227_1(" ZzZz",25);
 
 	return 0;
 }
 
+#pragma region Solve
 long GetDecimal(long input)
 {
-	
-	vector<bool> vec(input+1, true);
+
+	vector<bool> vec(input + 1, true);
 	vec[0] = false;
 	vec[1] = false;
 	for (size_t i = 2; i*i <= input; i++)
 	{
 		if (vec[i])
 		{
-			for (size_t j = i*i; j <= input; j+=i)
+			for (size_t j = i * i; j <= input; j += i)
 			{
 				vec[j] = false;
-				 
+
 			}
 		}
 	}
-	
+
 	long answer = 0;
 	for (size_t i = 0; i < input + 1; i++)
 	{
@@ -74,18 +78,18 @@ long GetDecimal(long input)
 			answer += i;
 		}
 	}
-	
+
 	return answer;
 }
 
 string solution(vector<string> participant, vector<string> completion) {
 	string answer = "";
-	
+
 	vector<char> key;
 	vector<vector<int>> value;
 	vector<char> key2;
 	vector<vector<int>> value2;
-	
+
 	if (participant.size() > 100000)
 	{
 		return answer;
@@ -145,14 +149,14 @@ string solution(vector<string> participant, vector<string> completion) {
 		}
 	}
 
-	
+
 	vector<bool> checerbool(value2[value2mapindex].size(), true);
 
 	for (size_t i = 0; i < value[findvalueindex].size(); i++)
 	{
 		int valueindex = value[findvalueindex][i];
 		bool check = true;
-		
+
 		for (size_t j = 0; j < value2[value2mapindex].size(); j++)
 		{
 			int valueindex2 = value2[value2mapindex][j];
@@ -170,12 +174,12 @@ string solution(vector<string> participant, vector<string> completion) {
 		{
 			return participant[valueindex];
 		}
-		
+
 	}
 	return answer;
 }
 
-string solution2(vector<string> participant, vector<string> completion) 
+string solution2(vector<string> participant, vector<string> completion)
 {
 	//문제는 통과 효율성 미통과
 	string answer = "";
@@ -265,8 +269,8 @@ vector<int> solution1211(vector<int> answers) {
 	int case2maxlenght = sizeof(case2) / sizeof(case2[0]);
 	int case3maxlenght = sizeof(case3) / sizeof(case3[0]);
 
-	vector<int> casePassCount(3,0);
-	
+	vector<int> casePassCount(3, 0);
+
 	for (size_t i = 0; i < answersMaxLenght; i++)
 	{
 		//int answersindex = (i % answersMaxLenght);
@@ -292,11 +296,11 @@ vector<int> solution1211(vector<int> answers) {
 	tempanswer.push_back(2);
 	tempanswer.push_back(3);
 
-	for (size_t i = 0; i < casePassCount.size()-1; i++)
+	for (size_t i = 0; i < casePassCount.size() - 1; i++)
 	{
-		for (size_t j = i+1; j < casePassCount.size(); j++)
+		for (size_t j = i + 1; j < casePassCount.size(); j++)
 		{
-			if(casePassCount[i] < casePassCount[j])
+			if (casePassCount[i] < casePassCount[j])
 			{
 				int temp = casePassCount[j];
 				casePassCount[i] = casePassCount[j];
@@ -327,16 +331,16 @@ vector<int> solution1212(vector<int> array, vector<vector<int>> commands) {
 	vector<int> answer;
 
 	for (size_t i = 0; i < commands.size(); i++)
-	{		
+	{
 		int startindex = commands[i][0] - 1;
 		int indexlenght = commands[i][1] - startindex;
 		vector<int> tempvec;
 		for (size_t j = 0; j < indexlenght; j++)
 		{
-			tempvec.push_back(array[startindex+j]);
+			tempvec.push_back(array[startindex + j]);
 		}
 
-		for (size_t k = 0; k < tempvec.size()-1; k++)
+		for (size_t k = 0; k < tempvec.size() - 1; k++)
 		{
 			for (size_t kk = k + 1; kk < tempvec.size(); kk++)
 			{
@@ -363,11 +367,11 @@ string solution1212_2(string s) {
 
 	if (lenght % 2 == 0)
 	{
-		answer = s.substr(div-1, 2);
+		answer = s.substr(div - 1, 2);
 	}
 	else
 	{
-		answer = s.substr(div,1);
+		answer = s.substr(div, 1);
 	}
 
 	return answer;
@@ -379,8 +383,8 @@ vector<int> solution1212_3(vector<int> arr)
 
 	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
 	cout << "Hello Cpp" << endl;
-	
-	int temp= -1; 
+
+	int temp = -1;
 	for (size_t i = 0; i < arr.size(); i++)
 	{
 		if (arr[i] != temp)
@@ -399,7 +403,7 @@ vector<int> solution1217_1(vector<int> arr, int divisor) {
 	for (size_t i = 0; i < arr.size(); i++)
 	{
 
-		if (arr[i]%divisor == 0)
+		if (arr[i] % divisor == 0)
 		{
 			answer.push_back(arr[i]);
 		}
@@ -411,7 +415,7 @@ vector<int> solution1217_1(vector<int> arr, int divisor) {
 	}
 	else
 	{
-		for (size_t i = 0; i < answer.size()-1; i++)
+		for (size_t i = 0; i < answer.size() - 1; i++)
 		{
 			for (size_t j = i; j < answer.size(); j++)
 			{
@@ -441,7 +445,7 @@ long long solution1217_2(int a, int b) {
 	std::cout << min;
 
 	for (int i = min; i <= max; i++)
-	{ 
+	{
 		answer += i;
 	}
 	return answer;
@@ -453,7 +457,7 @@ vector<string> solution1217_3(vector<string> strings, int n) {
 	int stringindex = n;
 
 	vector<char> tempvectorchar;
-	vector<int> tempvectorindex; 
+	vector<int> tempvectorindex;
 	vector<vector<string>> tempvector;
 
 	for (size_t i = 0; i < strings.size(); i++)
@@ -471,21 +475,21 @@ vector<string> solution1217_3(vector<string> strings, int n) {
 		if (index == -1)
 		{
 			tempvectorchar.push_back(strings[i].at(n));
-			tempvectorindex.push_back(tempvectorchar.size()-1);
+			tempvectorindex.push_back(tempvectorchar.size() - 1);
 
 			vector<string> temp;
 			temp.push_back(strings[i]);
 			tempvector.push_back(temp);
 		}
 		else
-		{ 
+		{
 			tempvector[index].push_back(strings[i]);
 		}
 	}
 
 	for (size_t i = 0; i < tempvector.size(); i++)
 	{
-		for (size_t j = 0; j < tempvector[i].size()-1; j++)
+		for (size_t j = 0; j < tempvector[i].size() - 1; j++)
 		{
 			for (size_t k = j; k < tempvector[i].size(); k++)
 			{
@@ -499,7 +503,7 @@ vector<string> solution1217_3(vector<string> strings, int n) {
 		}
 	}
 
-	for (size_t i = 0; i < tempvectorchar.size()-1; i++)
+	for (size_t i = 0; i < tempvectorchar.size() - 1; i++)
 	{
 		for (size_t j = i; j < tempvectorchar.size(); j++)
 		{
@@ -509,7 +513,7 @@ vector<string> solution1217_3(vector<string> strings, int n) {
 				tempvectorchar[j] = tempvectorchar[i];
 				tempvectorchar[i] = tempchar;
 
-				int tempindex = tempvectorindex[j]; 
+				int tempindex = tempvectorindex[j];
 				tempvectorindex[j] = tempvectorindex[i];
 				tempvectorindex[i] = tempindex;
 			}
@@ -528,20 +532,20 @@ vector<string> solution1217_3(vector<string> strings, int n) {
 
 bool solution1217_4(string s)
 {
-    bool answer = true;
+	bool answer = true;
 
-    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
-    cout << "Hello Cpp" << endl;
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	cout << "Hello Cpp" << endl;
 
-    return answer;
+	return answer;
 }
 
 //문자열 내 p와 y의 개수
 bool solution1218_1(string s)
 {
 	bool answer = true;
-	size_t slenght = s.length();	
-	
+	size_t slenght = s.length();
+
 	int countp = 0;
 	int county = 0;
 
@@ -575,7 +579,7 @@ string solution1218_2(string s) {
 
 	vector<char> schar;
 	vector<char> bchar;
-	
+
 	//65~90 대문자
 
 	for (size_t i = 0; i < s.length(); i++)
@@ -590,7 +594,7 @@ string solution1218_2(string s) {
 		}
 	}
 
-	if(schar.size()>0)
+	if (schar.size() > 0)
 	{
 		for (int i = 0; i < schar.size() - 1; i++)
 		{
@@ -636,12 +640,12 @@ string solution1218_2(string s) {
 //문자열 다루기 기본
 bool solution1218_3(string s) {
 	bool answer = true;
-	if (s.length() != 4 && s.length() != 6 )
+	if (s.length() != 4 && s.length() != 6)
 	{
 		answer = false;
 		return answer;
 	}
-	
+
 	for (size_t i = 0; i < s.length(); i++)
 	{
 		if (s[i] < '1')
@@ -669,14 +673,14 @@ string solution1218_4(vector<string> seoul) {
 	{
 		if (seoul[i].at(0) == 'K')
 		{
-			if(seoul[i] == "Kim")
+			if (seoul[i] == "Kim")
 			{
 				num = i;
 				break;
 			}
 		}
 	}
-	
+
 	answer += to_string(num);
 	answer += answer2;
 
@@ -691,7 +695,7 @@ string solution1219_1(int n) {
 	for (int i = 1; i <= n; i++)
 	{
 
-		if ((i % 2)== 0)
+		if ((i % 2) == 0)
 		{
 			answer += a;
 		}
@@ -712,12 +716,12 @@ int solution1219_2(string s) {
 	//1의 자리
 	int length = s.length();
 	int add = 0;
-	if (s.at[0] == '-')
+	if (s.at(0) == '-')
 	{
 		signal = false;
 		add++;
 	}
-	else if (s.at[0] == '+')
+	else if (s.at(0) == '+')
 	{
 		add++;
 	}
@@ -744,7 +748,7 @@ int solution1217_Company_001(int n)
 	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
 	cout << "Hello Cpp" << endl;
 
-	for (size_t i = maxvalue; i > 0; i/=10)
+	for (size_t i = maxvalue; i > 0; i /= 10)
 	{
 		int div = (int)(n / i);
 		int val = i * div;
@@ -781,6 +785,47 @@ int solution1217_Company_004(vector<int> A, vector<int> B) {
 			}
 		}
 	}
+
+	return answer;
+}
+#pragma endregion
+
+
+//시저 암호
+string solution_1227_1(string s, int n) {
+	string answer = "";
+
+	cout << s << endl;
+	for (size_t i = 0; i < s.length(); i++)
+	{
+		int temp = s.at(i) + n;
+		if (s.at(i) == ' ')
+		{
+			temp = ' ';
+		}
+		else if (s.at(i) <= 'Z')
+		{
+			if (temp > 'Z')
+			{
+				temp = ('A' - 1) + (temp - 'Z');
+			}
+		}
+		else if (s.at(i) <= 'z')
+		{
+			if (temp > 'z')
+			{
+				temp = ('a' - 1) + (temp - 'z');
+			}
+		}
+		answer += (char)temp;
+	}
+
+	cout << answer << endl;
+
+	//공백 32
+	//A ~ 65 Z 90
+	//A ~ 97 Z 122
+
 
 	return answer;
 }
