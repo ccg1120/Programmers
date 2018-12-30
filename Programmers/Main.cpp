@@ -788,7 +788,6 @@ int solution1217_Company_004(vector<int> A, vector<int> B) {
 
 	return answer;
 }
-#pragma endregion
 
 
 //시저 암호
@@ -827,5 +826,29 @@ string solution_1227_1(string s, int n) {
 	//A ~ 97 Z 122
 
 
+	return answer;
+}
+#pragma endregion
+
+
+vector<int> solution_1230_1(long long n) {
+	vector<int> answer;
+
+	string temp = to_string(n);
+
+	int lenght = temp.length();
+
+	//size_t -도 안됨
+	for (int i = lenght - 1; i >= 0; i--)
+	{
+		int intresult = (temp.at(i)-'1') + 1;
+		answer.push_back(intresult);
+	}
+
+	
+	/*while (n > 0) {
+		answer.push_back(n % 10);
+		n /= 10;
+	}*/
 	return answer;
 }
