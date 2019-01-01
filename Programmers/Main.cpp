@@ -852,3 +852,18 @@ vector<int> solution_1230_1(long long n) {
 	}*/
 	return answer;
 }
+
+//Æò±Õ ±¸ÇÏ±â
+double solution_0102(vector<int> arr) {
+	double answer = 0;
+	
+	int len = arr.size();
+	int hap = 0;
+
+	for (size_t i = 0; i < len; i++)
+	{
+		hap += arr[i];
+	}
+	answer = hap / (double)len;
+	return answer;
+}
