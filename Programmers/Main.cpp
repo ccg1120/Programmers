@@ -867,3 +867,18 @@ double solution_0102(vector<int> arr) {
 	answer = hap / (double)len;
 	return answer;
 }
+
+//핸드폰 번호 가리기
+string solution(string phone_number) {
+	string answer = "";
+
+	int max = 4;
+
+	int lenght = phone_number.length();
+	for (size_t i = 0; i < lenght -4; i++)
+	{
+		phone_number.at(i) = '*';
+	}
+	answer = phone_number;
+	return answer;
+}
