@@ -52,6 +52,7 @@ int main(void)
 }
 
 #pragma region Solve
+
 long GetDecimal(long input)
 {
 
@@ -828,8 +829,6 @@ string solution_1227_1(string s, int n) {
 
 	return answer;
 }
-#pragma endregion
-
 
 vector<int> solution_1230_1(long long n) {
 	vector<int> answer;
@@ -841,11 +840,11 @@ vector<int> solution_1230_1(long long n) {
 	//size_t -도 안됨
 	for (int i = lenght - 1; i >= 0; i--)
 	{
-		int intresult = (temp.at(i)-'1') + 1;
+		int intresult = (temp.at(i) - '1') + 1;
 		answer.push_back(intresult);
 	}
 
-	
+
 	/*while (n > 0) {
 		answer.push_back(n % 10);
 		n /= 10;
@@ -856,7 +855,7 @@ vector<int> solution_1230_1(long long n) {
 //평균 구하기
 double solution_0102(vector<int> arr) {
 	double answer = 0;
-	
+
 	int len = arr.size();
 	int hap = 0;
 
@@ -869,16 +868,35 @@ double solution_0102(vector<int> arr) {
 }
 
 //핸드폰 번호 가리기
-string solution(string phone_number) {
+string solution_0001(string phone_number) {
 	string answer = "";
 
 	int max = 4;
 
 	int lenght = phone_number.length();
-	for (size_t i = 0; i < lenght -4; i++)
+	for (size_t i = 0; i < lenght - 4; i++)
 	{
 		phone_number.at(i) = '*';
 	}
 	answer = phone_number;
+	return answer;
+}
+#pragma endregion
+
+//자릿수 더하기
+int solution_0108(int n)
+{
+	int answer = 0;
+
+	// [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+	cout << "Hello Cpp" << endl;
+	int temp = n;
+
+	while (temp != 0 )
+	{
+		answer += temp % 10;
+		temp = temp / 10;
+	}
+
 	return answer;
 }
