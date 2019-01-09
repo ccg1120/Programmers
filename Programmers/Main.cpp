@@ -30,6 +30,8 @@ string solution1218_4(vector<string> seoul);
 int solution1217_Company_001(int );
 int solution1217_Company_004(vector<int> , vector<int> );
 
+int solution_0110_2(string );
+
 string solution_1227_1(string s, int n);
 int main(void)
 {
@@ -46,7 +48,9 @@ int main(void)
 	solution1218_4(kk);*/
 
 	
-	solution_1227_1(" ZzZz",25);
+	//solution_1227_1(" ZzZz",25);
+
+	solution_0110_2("-1234");
 
 	return 0;
 }
@@ -896,6 +900,57 @@ int solution_0108(int n)
 	{
 		answer += temp % 10;
 		temp = temp / 10;
+	}
+
+	return answer;
+}
+
+//x만큼 간격이 있는 n개의 숫자
+vector<long long> solution_0110(int x, int n) {
+	vector<long long> answer;
+
+	for (size_t i = 0; i < n; i++)
+	{
+		answer.push_back(x *(i + 1));
+	}
+
+	return answer;
+}
+
+int solution_0110_2(string s) {
+	int answer = 0;
+
+	int startindex = 0;
+	
+	bool minus = false;
+	if (s.at(0) == '-')
+	{
+		startindex++;
+		minus = true;
+	}
+	else if(s.at(0) == '+')
+	{
+		startindex++;
+	}
+
+	int lenght = (s.length() -1 ) - startindex;
+
+	for (int i = lenght;  i >=0; i--)
+	{
+		int num = (s.at(startindex) - '0');
+		int temp = 1;
+		for (size_t j= 0; j < i; j++)
+		{
+			temp *= 10;
+		}
+		answer +=(num * temp);
+		startindex++;
+	}
+	 
+
+	if (minus)
+	{
+		answer = answer * -1;
 	}
 
 	return answer;
