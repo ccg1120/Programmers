@@ -900,3 +900,15 @@ int solution_0108(int n)
 
 	return answer;
 }
+
+//x만큼 간격이 있는 n개의 숫자
+vector<long long> solution_0110(int x, int n) {
+	vector<long long> answer;
+
+	for (size_t i = 0; i < n; i++)
+	{
+		answer.push_back(x *(i + 1));
+	}
+
+	return answer;
+}
